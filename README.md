@@ -23,7 +23,7 @@ using analogy metrics proposed by Tal Linzen (2016).
 It can take two pretrained models or a dataset to be trained in vector_training.py.
 
 The model first saves average cosine similarity between weights in models' shared vocabulary. 
-Then, using a list of analogies in the form a : a* :: b : b*, 
+Then, using a list of analogies in the form a:a* :: b:b*, 
 it calculates cosine similarities between "most similar" word offsets to provide the missing word, 
 e.g., talk:talking::swim:swimming. 
 If the model correctly provides b*, it receives a point, but it receives no points for those it gets wrong.

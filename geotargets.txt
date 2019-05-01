@@ -1,0 +1,202 @@
+
+Alabama
+AL
+Mobile
+Alaska
+AK
+Anchorage
+Juneau
+Arizona
+AZ
+Phoenix
+PHX
+Arkansas
+Little Rock
+AR
+California
+Cali
+San Francisco
+SF
+Los Angeles
+Bay Area
+Silicon Valley
+San Jose
+Modesto 
+CA
+San Fran
+Cali
+Colorado
+Denver
+Connecticut
+CT
+Hartford
+Delaware
+Florida
+Tallahassee
+Miami
+Pensacola
+Tampa
+Dunedin
+Orlando
+FL
+Georgia
+GA
+Atlanta
+Macon
+Savannah
+ATL
+Hawaii
+Hawai'i
+Honolulu
+Idaho
+ID
+Illinois
+IL
+Springfield
+CHI
+Chicago
+Evanston
+Indiana
+Indy
+Indianapolis
+Bloomingdale
+Iowa
+IA
+Des Moines
+Kansas
+KS
+Topeka
+Louisville
+Kentucky
+KY
+Louisiana
+NOLA
+New Orleans
+Baton Rouge
+Lafayette
+Maine
+PVD
+Maryland
+Baltimore
+Annapolis
+Moco
+Montgomery County
+Prince George
+PG
+Massachusetts
+Boston
+Salem
+Michigan
+Detroit
+Lansing
+Ann Arbor
+Minnesota
+Minneapolis
+MN
+Mississippi
+Missouri
+Mizzou
+Montana
+MN
+Nebraska
+Omaha
+NE
+Nevada
+Reno
+NV
+Vegas
+New Hampshire
+NH
+New Jersey
+NJ
+New Mexico
+Albuquerque
+NM
+York
+NYC
+Queens
+Brooklyn
+Manhattan
+Flushing
+Bronx
+North Carolina
+NC
+North Dakota
+ND
+Ohio
+Oklahoma
+Oregon
+PDX
+Pennsylvania
+philadephia
+PHI
+pittsburgh
+Philly
+Pixburg
+Penn
+Rhode Island
+Providence
+RI
+South Carolina
+Charleston
+South Dakota
+SD
+Tennessee
+Memphis
+Knoxville
+Nashville
+TN
+Texas
+TX
+DFW
+HOU
+Dallas
+Houston
+Corpus Christi
+Austin
+Utah
+Salt Lake
+UT
+Salt Lake
+Vermont
+Burlington
+VT
+Virginia
+VA
+Roanoake
+Newport News
+C'ville
+Cville
+Fairfax
+Washington
+WA
+Seattle
+West Virginia
+WV
+Wisconsin
+Milwaukee
+WI
+Wyoming
+WY
+District of Columbia
+DC
+DMV
+CLE
+akron
+cincinnati
+cincy
+jax
+bmore
+b'more
+Beverly Hills
+Long Island
+Long Beach
+LAX
+Hollywood
+chesapeake
+joisey
+huntington
+boulder
+provo
+hanover
+sfb

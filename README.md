@@ -36,6 +36,8 @@ Metrics used:
 Example usage:
 `word2diavec.py --ft fasttext.model --w2v word2vec.model --in text_input.txt --out text_output.txt --an word-test.v1.txt`
 
+Output consists of a .txt file with the results of the four metrics.
+
 ## vector_training.py
 
 This script uses `gensim` implementations of FastText and word2vec to train models on a corpus of tweets.
@@ -47,6 +49,8 @@ It can also retrain preexisting models for 10 additional epochs.
 
 Example usage:
 `vector_training.py --ft fasttext.model --w2v word2vec.model --tsv tweet_data.tsv`
+
+Output consists of trained FastText and word2vec .model files.
 
 ## tweet_fetcher.py
 
@@ -63,7 +67,7 @@ It then filters tweets based on a user-provided list of locations,
 which can be supplemented by user-provided stopwords/tokens,
 keeping only tweets whose location fields contain the desired locations with no stopwords.
 
-Tweet metadata is exported to .tsv.
+Output consists of tweet metadata and tweets in .tsv format.
 
 Example usage:
 `tweet_fetcher.py --keys api_key.txt --output tweet_data.tsv --geo geotargets.txt --toks tok_list.tsv --num 1000`
@@ -85,7 +89,8 @@ The FastText model fared best on 2/3 Linzen (2016) metrics on Mikolov et al. (20
     Ignore-A:   0.1512      0.0198
 
 This isn't particularly impressive, given that Linzen's models scored no lower than 0.05 on any metric, 
-and went as high as 0.92, using the same dataset.
+and went as high as 0.92, using the same dataset. See report for a breakdown of scores by category 
+and a further explanation of processes and shortcomings.
 
 
 ## Future goals

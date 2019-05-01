@@ -1,0 +1,4 @@
+average of cosine similarity between FT & w2v: -0.04003037683552188
+==============================
+
+Similarity metrics

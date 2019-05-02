@@ -38,10 +38,10 @@ def cosines(model1, model2):
     return vector_average
 
 
-def most_similar_10(model1, model2, toks):
+def most_similar(model1, model2, toks):
     """
-        Calculates most similar ten words for a given token, then returns a list of dicts of cosine similarity and
-        most similar to each token. More for qualitative analysis than anything.
+        Calculates the 5most similar words for a given token in two models, then returns a list of dicts of cosine
+        similarity between models for the token + the most similar metric. For qualitative analysis.
 
     :param model1: KeyedVector object to test
     :param model2: other KeyedVector object to test
@@ -54,7 +54,7 @@ def most_similar_10(model1, model2, toks):
         ft_sim = model1.most_similar(p)
         w2v_sim = model2.most_similar(p)
         tok_dict[p] = (cosine_similarity(model1[p].reshape(1, -1), model2[p].reshape(1, -1))[0][0],
-                       ft_sim[0][1], w2v_sim[0][1])
+                       ft_sim[0:4], w2v_sim[0:4])
 
     return tok_dict
 
@@ -173,14 +173,14 @@ def main(load_bool):
 
     with open(parser.intxt, 'r') as inp:
         pronoun_list = [i.strip() for i in inp]
-        top_pronouns = most_similar_10(ft, w2v, pronoun_list)
+        top_pronouns = most_similar(ft, w2v, pronoun_list)
 
     with open(parser.outtxt, 'w') as out:
         out.write(f'Linzen scores\n' + '='*25)
         out.write(f'\nFT Linzen: {ft_scores}\t\tw2v Linzen: {w2v_scores}\n\n\n\n')
         out.write(f'Token similarity' + '='*25)
-        [out.write(f'{p}\n') for p in top_pronouns]
-        print(f'Data saved to {out}')
+        [out.write(f'\n{p}') for p in top_pronouns]
+        print(f'Data saved to {out.name}')
 
 
 if __name__ == '__main__':

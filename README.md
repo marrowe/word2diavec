@@ -33,6 +33,11 @@ Metrics used:
 2. nearest neighbor cosine similarities of b
 3. most similar to both a* and b
 
+It also returns a the cosine similarities between models for a list of target words, 
+as well as the top three most similar words for each model.
+
+Output consists of the average Linzen scores and individual cosine similarities in .txt format.
+
 Example usage:
 `word2diavec.py --ft fasttext.model --w2v word2vec.model --in text_input.txt --out text_output.txt --an word-test.v1.txt`
 

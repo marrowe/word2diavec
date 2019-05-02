@@ -78,6 +78,7 @@ def preproc(tweet):
     punct = string.punctuation + '’¿_*'
     this_tweet = ''
     tweet = re.sub(r'http.*', '', tweet)  # removes urls
+    tweet = re.sub(r'\b@[A-Za-z0-9]?\b', '', tweet)  # remove @mentions
     tweet = re.sub(r'\byou (guy|all\b)', r'you\1', tweet)  # for modeling purposes, treat as one token
 
     emoji_bool = False

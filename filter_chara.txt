@@ -1,4 +1,15 @@
 ✈️
 /
 ✈
--','➡','\|','\bto\b','\bhell\b','⚣','\bs?he/', '\bthey', '->'
+-
+➡
+\|
+\bto\b
+\bhell\b
+⚣
+⚢
+⚧
+\bs?he/
+\bthey
+->
+\bnb\b

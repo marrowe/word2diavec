@@ -57,7 +57,7 @@ class TweetFetch:
         if make_csv:
             self.write_to_csv(self.tweets, parser.o)
 
-    def start_api(self, key_dict):
+    def start_api(self, key_dict):  # must be provided by user - freely available @ developer.twitter.com
         consumer_key = key_dict['cons']
         consumer_secret_key = key_dict['cons_sec']
         access_token = key_dict['acc']
@@ -106,7 +106,7 @@ class TweetFetch:
 
         return self.filter(all_tweets)
 
-    def get_data(self, status, geo=True):
+    def get_data(self, status, geo=False):
         """--------------------------------------------------------------------------
             Extracts datetime, @handle, display name, location, description, and tweet text
             from the user dict of individual tweet metadata.
@@ -119,7 +119,7 @@ class TweetFetch:
         data = {f: user.get(f) for f in metadata_fields}  # extracts metadata specified in constant
         if geo:
             if status.get('geo') is not None:  # gets geodata - rarely used
-                geodude = status.get('geo')['coordinates']
+                geodude = status.get('geo')['coordinates']  # NB: contributes to rate limit!
                 data.update({'geo': f'UT: {geodude[0]},{geodude[1]})'})
             else:
                 data.update({'geo': None})
@@ -149,8 +149,8 @@ class TweetFetch:
         col = len(metadata_fields) - 1
 
         for tweet in tweet_tup:
-            # if '\n' in [n[1] for n in tweet]:
-            #     [re.sub('\n', '\r', n[1]) for n in tweet]
+            # if '\n' in [n[1] for n in tweet]:              # this should fix the linebreak issue - unfortunately
+            #     [re.sub('\n', '\r', n[1]) for n in tweet]  # couldn't get it to work in time for the deadline
             if tweet[col][1] is not "" and tweet[col][1] is not None:  # make sure tweet location isn't null
                 if any(re.search(r'\b' + place + r'\b', tweet[col][1], re.I) for place in list(us_locations)):
                     if not any(re.search(f, tweet[col][1], re.I) for f in filter_chara):

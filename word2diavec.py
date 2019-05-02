@@ -14,7 +14,7 @@ parser.add_argument('-load_true', '--load', action="store_true", dest="load", de
 parser.add_argument('-text_output', '--in', action="store", dest="outtxt", type=str, default="text_output.txt")
 parser.add_argument('-text_input', '--out', action="store", dest="intxt", type=str, default="text_input.txt")
 parser.add_argument('-analogies', '--an', action="store", dest="analogies", type=str, default="word-test.v1.txt")
-parser.add_argument('-explore_true', '--exp', action="store_true", dest="expl", default=False)
+parser.add_argument('-explore_true', '--exp', action="store_false", dest="expl", default=False)
 parser = parser.parse_args()
 
 
@@ -177,12 +177,12 @@ def main(load_bool):
         top_pronouns = most_similar(ft, w2v, pronoun_list)
 
     with open(parser.outtxt, 'w') as out:
-        out.write(f'Linzen scores\n' + '='*25)
+        out.write(f'Linzen scores\texplore={parser.expl}\n' + '='*25)
         out.write(f'\nFT: {ft_scores}\t\tw2v: {w2v_scores}\n\n\n\n')
         out.write(f'Token similarity\n' + '='*25)
         [out.write(f'\n{p}: {top_pronouns[p][0]}\n'
                    f'\t{top_pronouns[p][1]}'
-                   f'\t{top_pronouns[p][2]}') for p in top_pronouns]
+                   f'\n\t{top_pronouns[p][2]}') for p in top_pronouns]
         print(f'Data saved to {out.name}')
 
 

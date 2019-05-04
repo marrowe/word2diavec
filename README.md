@@ -118,11 +118,11 @@ When tested on pronoun_analogies.py, scores were also quite low:
 And cosine similarities between models on the same pronouns showed them to be fairly unrelated: 
 
     Pronoun	    cos sim.
-    you	        -0.0604
+    you         -0.0604
     youse	    -0.0246
-    yinz	    0.010
-    yall	    0.0236.
-    youguys 	-0.0315
+    yinz	    0.0100
+    yall	    0.0236
+    youguys     -0.0315
     youall	    0.0731
 
 Cosine similarity between pronouns was slightly better:

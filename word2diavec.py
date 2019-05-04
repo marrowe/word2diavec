@@ -1,6 +1,6 @@
 import argparse
 import re
-# import vector_training
+import vector_training
 from gensim.models import FastText, Word2Vec
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -9,12 +9,12 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-fasttext', '--ft', action="store", dest="ft", type=str, default="fasttext.model")
 parser.add_argument('-word2vec', '--w2v', action="store", dest="w2v", type=str, default="word2vec.model")
 parser.add_argument('-tweet_csv', '--csv', action="store", dest="t", type=str, default="tweet_data.tsv")
-parser.add_argument('-load_true', '--load', action="store_true", dest="load", default=True)
+parser.add_argument('-load', '--l', action="store_true", dest="load")
 
-parser.add_argument('-text_output', '--in', action="store", dest="outtxt", type=str, default="text_output.txt")
-parser.add_argument('-text_input', '--out', action="store", dest="intxt", type=str, default="text_input.txt")
+parser.add_argument('-text_output', '--out', action="store", dest="outtxt", type=str, default="text_output.txt")
+parser.add_argument('-text_input', '--in', action="store", dest="intxt", type=str, default="text_input.txt")
 parser.add_argument('-analogies', '--an', action="store", dest="analogies", type=str, default="word-test.v1.txt")
-parser.add_argument('-explore_true', '--exp', action="store_false", dest="expl", default=False)
+parser.add_argument('-explore', '--exp', action="store_true", dest="expl")
 parser = parser.parse_args()
 
 
@@ -168,7 +168,7 @@ def main(load_bool):
         w2v = Word2Vec.load(parser.w2v).wv
         print("Hello words! Models loaded.")
 
-    analogies_list = analogy_parse(parser.analogies, start="", end="")
+    analogies_list = analogy_parse(parser.analogies, start="", end=": exploratory")
     ft_scores = linzen_tests(analogies_list, ft, exploratory=parser.expl)
     w2v_scores = linzen_tests(analogies_list, w2v, exploratory=parser.expl)
 

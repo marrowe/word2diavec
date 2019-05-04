@@ -85,7 +85,7 @@ keeping only tweets whose location fields contain the desired locations with no 
 Output consists of tweet metadata and tweets in .tsv format.
 
 Example usage:
-`tweet_fetcher.py --keys api_key.txt --output tweet_data.tsv --geo geotargets.txt --toks tok_list.tsv --num 1000`
+`tweet_fetcher.py --keys api_key.txt --output tweet_data.tsv --geo geotargets.txt --toks tok_list.txt --num 1000`
 
 ## Results
 Overall performance of the models on the test data were quite poor, 

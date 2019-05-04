@@ -168,7 +168,7 @@ def main(load_bool):
         w2v = Word2Vec.load(parser.w2v).wv
         print("Hello words! Models loaded.")
 
-    analogies_list = analogy_parse(parser.analogies, start="", end=": exploratory")
+    analogies_list = analogy_parse(parser.analogies, start="", end="")
     ft_scores = linzen_tests(analogies_list, ft, exploratory=parser.expl)
     w2v_scores = linzen_tests(analogies_list, w2v, exploratory=parser.expl)
 

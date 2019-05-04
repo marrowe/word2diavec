@@ -32,14 +32,15 @@ If the model correctly provides b*, it receives a point, but it receives no poin
 
 Metrics used:
 1. "vanilla" offset method
-2. nearest neighbor cosine similarities of b
-3. most similar to both a* and b
+2. only-b: nearest neighbor cosine similarities of b
+3. ignore-a: most similar to both a* and b
 
 It also returns a the cosine similarities between models for a list of target words, 
 as well as the top three most similar words for each model.
 
 In Explore mode, all of the above is true, except instead of returning the scored Linzen metrics,
-it returns 
+it returns a dictionary of the analogy in question with the model's Linzen results in a tuple
+(e.g., {'a : a* :: b : ': (vanilla word, only-b word, ignore-a word)
 
 Output consists of the average Linzen scores and individual cosine similarities in .txt format.
 
@@ -109,10 +110,10 @@ ALL is the average of all metrics, while SYN is the average of the syntactic cat
 When tested on pronoun_analogies.py, scores were also quite low:
 
     Linzen offset metrics
-                FT      w2v
-    VANILLA 	0.0100	0.0300
+                FT          w2v
+    VANILLA     0.0100	0.0300
     ONLY-B	    0.0250	0.0000
-    IGNORE-A	0.0100	0.0000
+    IGNORE-A    0.0100	0.0000
 
 And cosine similarities between models on the same pronouns showed them to be fairly unrelated: 
 
@@ -126,21 +127,21 @@ And cosine similarities between models on the same pronouns showed them to be fa
 
 Cosine similarity between pronouns was slightly better:
 
-                        FastText
-    pronoun	    youse	yinz	yall	youguys	youall
-    you	        0.6966	0.6781	0.7798	0.7917	0.7266
-    youse	    ------  0.6954	0.5937	0.5641	0.5214
-    yinz		------  ------	0.6704	0.6168	0.5422
-    yall		------  ------  ------	0.7290	0.5993
-    youguys		------  ------  ------  ------  0.7523
+                            FastText
+    pronoun	    youse   yinz    yall    youguys youall
+    you         0.6966  0.6781  0.7798  0.7917  0.7266
+    youse	    ------  0.6954  0.5937  0.5641  0.5214
+    yinz        ------  ------  0.6704  0.6168  0.5422
+    yall        ------  ------  ------  0.7290  0.5993
+    youguys     ------  ------  ------  ------  0.7523
     
-                        word2vec
-    pronoun	    youse	yinz	yall	youguys	youall
-    you	        0.5651	0.6444	0.7628	0.7167	0.6401
-    youse		------  0.7007	0.4959	0.4523	0.3748
-    yinz		------	------  0.6420	0.5716	0.5222
-    yall		------  ------  ------  0.5969	0.5192
-    youguys		------  ------  ------  ------  0.5969
+                            word2vec
+    pronoun	    youse   yinz    yall    youguys youall
+    you         0.5651  0.6444  0.7628  0.7167  0.6401
+    youse       ------  0.7007  0.4959  0.4523  0.3748
+    yinz        ------  ------  0.6420  0.5716  0.5222
+    yall        ------  ------  ------  0.5969  0.5192
+    youguys	    ------  ------  ------  ------  0.5969
 
 
 See report for a breakdown of scores by category 

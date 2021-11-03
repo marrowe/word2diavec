@@ -8,7 +8,7 @@ tweet_fetcher.py
 
 Originally written for LING-447, American Dialects, as tweet_sentiment_to_csv.py
 
-    by Margaret Anne Rowe, with ample input from Ethan Beaman
+    by Margaret Anne Rowe, with ample input from Emily Beaman
         mar299                  |                  ejb100
                         @ georgetown.edu
 
